@@ -1,0 +1,10 @@
+[Unit]
+Description=Firmus API
+After=network.target
+
+[Service]
+User=firmus
+Group=www-data
+WorkingDirectory=/home/bitcoinbrisbane/mrff-api
+Environment="PATH=/home/bitcoinbrisbane/mrff-api/venv/bin"
+ExecStart=/home/bitcoinbrisbane/mrff-api/venv/bin/uwsgi --ini api.ini
