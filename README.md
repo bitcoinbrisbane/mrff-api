@@ -27,7 +27,7 @@ Python / Flask Based API
 3. Install the virtual env  `python3 -m venv venv`
 4. Activate `source venv/bin/activate`
 5. Install project dependancies with pipenv: `pip install -r requirements.txt`
-6. Run `app --socket 0.0.0.0:5000 --protocol=http -w wsgi:app`
+6. Run `python app.py`
 7. `deactivate`
 8. Copy the api.service file `cp api.service /etc/systemd/system`
 9. `systemctl enable api`

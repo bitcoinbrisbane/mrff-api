@@ -11,7 +11,7 @@ from .db import db
 from .opportunity.routes import opportunity
 # add more here that map to the tables
 
-CONN_STRING = 'postgresql://xxxx:xxx.com:25061/firmus?sslmode=require' #os.environ.get('CONN_STRING')
+CONN_STRING = 'postgresql://xxxx:xxx.com:25061/xxx?sslmode=require' #os.environ.get('CONN_STRING')
 print('app.__init__ connstring: ' + CONN_STRING)
 
 # no need to do migrations just yet
