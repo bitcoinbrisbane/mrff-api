@@ -1,4 +1,5 @@
 from ..db import db
+from sqlalchemy.dialects.postgresql import JSON
 
 
 class OpportunityModel(db.Model):
@@ -9,23 +10,19 @@ class OpportunityModel(db.Model):
     launch_date = db.Column(db.DateTime, nullable=False)
     open_date = db.Column(db.DateTime, nullable=False)
     close_date = db.Column(db.DateTime, nullable=False)
+    grant_connect_go_id = db.Column(db.Integer)
+    mrff_initiative = db.Column(db.Integer)
 
-    def __init__(self, opportunity_id, title, stream, launch_date, open_date, close_date):
-        self.opportunity_id = opportunity_id
+    # , grant_connect_go_id, mrff_initiative
+    def __init__(self, title, stream, launch_date, open_date, close_date):
         self.title = title
         self.stream = stream
         self.launch_date = launch_date
         self.open_date = open_date
         self.close_date = close_date
-        
+        # self.grant_connect_go_id = grant_connect_go_id
+        # self.mrff_initiative = mrff_initiative
 
     def __repr__(self):
-        return {
-            'id': self.opportunity_id, 
-            'title': self.title, 
-            'stream': self.stream, 
-            'launch_date': self.launch_date,
-            'open_date': self.open_date,
-            'close_date': self.close_date
-        }
+        return f"<Opportunity {self.name}>"
 

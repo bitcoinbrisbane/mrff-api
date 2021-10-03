@@ -1,13 +1,11 @@
 # for running as dev
 from app import app
-#from dotenv import load_dotenv
+
 import os
+from dotenv import load_dotenv
 
-#load_dotenv()
-
-print('***')
-print(os.environ.get('IP_ADDRESS'))
+load_dotenv()
 
 if __name__ == '__main__':
-    app.run(os.environ.get('IP_ADDRESS'), port=os.environ.get('PORT'), debug=os.environ.get('DEBUG'))
+    app.run(os.environ.get('IP_ADDRESS'), port=os.getenv('PORT'), debug=os.environ.get('DEBUG'))
 

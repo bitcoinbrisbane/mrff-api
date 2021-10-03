@@ -22,12 +22,27 @@ Python / Flask Based API
 
 ### Setting up the API
 
+Note:  May need to 
+
+```bash
+sudo apt-get install -y python3-psycopg2
+```
+
+or
+
+```bash
+pip install psycopg2-binary
+```
+
 1. Clone the repo and cd into the new local repo: `git clone git@github.com:bitcoinbrisbane/mrff-api.git && cd mrff-api`
 2. Create the `.env` file by `cp .env.example .env`
 3. Install the virtual env  `python3 -m venv venv`
 4. Activate `source venv/bin/activate`
 5. Install project dependancies with pipenv: `pip install -r requirements.txt`
 6. Run `python app.py`
+
+
+## Hosting
 7. `deactivate`
 8. Copy the api.service file `cp api.service /etc/systemd/system`
 9. `systemctl enable api`
